@@ -17,9 +17,13 @@ set password
 echo -n <yourpassword> | sha256sum
 ```
 
-copy password, edit file *server.conf* and paste to *root_password_sha2 = <paste hash>*
+copy password, edit file *server.conf*
 ```bash
 sudo nano /etc/graylog/server/server.conf
+```
+
+paste to
+```bash
 root_password_sha2 = <paste hash>
 ```
 
