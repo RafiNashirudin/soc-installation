@@ -1,3 +1,75 @@
+# install Graylog
+
+install java
+```
+sudo apt install openjdk-17-jre -y
+```
+install graylog
+```bash
+wget https://packages.graylog2.org/repo/packages/graylog-5.2-repository_latest.deb
+sudo dpkg -i graylog-5.2-repository_latest.deb
+sudo apt update
+sudo apt install graylog-server -y
+```
+
+set password
+```
+echo -n <yourpassword> | sha256sum
+```
+
+copy password, edit file *server.conf* and paste to *root_password_sha2 = <paste hash>*
+```bash
+sudo nano /etc/graylog/server/server.conf
+# root_password_sha2 = <paste hash>
+```
+
+start and enable
+```bash
+sudo systemctl daemon-reexec
+sudo systemctl start graylog-server
+sudo systemctl enable graylog-server
+```
+
+access graylog
+```
+http://<your-ip>:9000
+```# install Graylog
+
+install java
+```
+sudo apt install openjdk-17-jre -y
+```
+install graylog
+```bash
+wget https://packages.graylog2.org/repo/packages/graylog-5.2-repository_latest.deb
+sudo dpkg -i graylog-5.2-repository_latest.deb
+sudo apt update
+sudo apt install graylog-server -y
+```
+
+set password
+```
+echo -n <yourpassword> | sha256sum
+```
+
+copy password, edit file *server.conf* and paste to *root_password_sha2 = <paste hash>*
+```bash
+sudo nano /etc/graylog/server/server.conf
+# root_password_sha2 = <paste hash>
+```
+
+start and enable
+```bash
+sudo systemctl daemon-reexec
+sudo systemctl start graylog-server
+sudo systemctl enable graylog-server
+```
+
+access graylog
+```
+http://<your-ip>:9000
+```
+
 # install mongodb
 
 install package
@@ -69,4 +141,9 @@ sudo systemctl enable grafana-server.service
 check status grafana
 ```
 sudo systemctl status grafana-server
+```
+
+access grafana
+```
+http://<your-ip>:3000
 ```
