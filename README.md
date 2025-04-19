@@ -20,7 +20,7 @@ echo -n <yourpassword> | sha256sum
 copy password, edit file *server.conf* and paste to *root_password_sha2 = <paste hash>*
 ```bash
 sudo nano /etc/graylog/server/server.conf
-# root_password_sha2 = <paste hash>
+root_password_sha2 = <paste hash>
 ```
 
 start and enable
