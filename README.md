@@ -33,7 +33,7 @@ sudo systemctl enable graylog-server
 access graylog
 ```
 http://<your-ip>:9000
-```# install Graylog
+```
 
 install java
 ```
